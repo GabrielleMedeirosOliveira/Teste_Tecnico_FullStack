@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    width: 80%;
+
+    margin: 0 auto;
+
+}
+
+.inputLabel{
+    width: 90%;
+}
+
+.input{
+    width: 90%;
+}
+
+.btn_container{
+    display: flex;
+    width: 95%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.btn_register_contact{
+    margin: 1rem auto 0 auto;
+    width: 60%;
+}
+
+.btn_go_back{
+    margin: 1rem auto 0 auto;
+    width: 50%;
+}
