@@ -1,0 +1,46 @@
+.itemList{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    margin: 1rem auto;
+    padding: 1rem;
+
+    width: 80%;
+    height: 2500px;
+
+    border-radius: 5px;
+
+    background-color: rgb(224, 217, 206);
+}
+
+.clientCard{
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.clientInfo{
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.clientCardEditBtn{
+
+    color: darkgoldenrod;
+
+    font-size: 18px;
+
+    font-weight: 300;
+
+    border: none;
+
+    background-color: rgb(224, 217, 206);
+}
+
+.clientCardContainerBtn{
+    display: flex;
+}

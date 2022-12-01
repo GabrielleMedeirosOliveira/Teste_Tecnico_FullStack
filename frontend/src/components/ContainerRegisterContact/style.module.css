@@ -3,13 +3,38 @@
     flex-direction: column;
     align-items: center;
 
-    margin: auto;
+    margin: 0 auto;
+    padding: 1rem;
 
     gap: 2rem;
 
-    width: 20rem;
+    width: 95%;
+    max-width: 500px;
+
+    max-height: 800px;
+
+    border-radius: 5px;
+
+    background-color: #b42529;
 }
 
 .btn_get_contacts{
-    width: 45%;
+    width: 60%;
+    height: 20px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #d46455;
+}
+
+.btn_get_contacts:hover{
+    opacity: .5;
+    color: white;
+
+}
+
+.clientContactsContainer{
+    display: flex;
+    gap: 1rem;
 }

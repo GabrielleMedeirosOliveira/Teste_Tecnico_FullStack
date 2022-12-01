@@ -1,8 +1,9 @@
 import Paths from "./routes";
+import style from "./style.module.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className={style.container}>
       <Paths/>
     </div>
   );

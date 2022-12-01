@@ -1,39 +1,24 @@
 import { useContext } from "react";
 import { ContactDataContext } from "../../context/contactData";
+import { ContactCard } from "../ContactCard";
 import style from "./style.module.css";
+
 
 export const ContainerContacts = () => {
   const { contacts } = useContext(ContactDataContext);
-
   return (
     <>
-      <ul className={style.clientList}>
+      <ul className={style.contactist}>
         {
-          contacts.map(contact =>{
-            return contact.isActive === false ?
-            (
-              <li key={contact.id}>
-                <div>
-                  <p>Nome: {contact.name}</p>
-                  <p>Email: {contact.email}</p>
-                  <p>Telefone: {contact.fone}</p>
-                  <p>Status: Deactivated</p>
-                  <p>Cliente: {contact.client.name}</p>
-                </div>
-              </li>
-          ):
+          contacts.length > 0 ?
           (
-            <li key={contact.id}>
-              <div>
-                <p>Nome: {contact.name}</p>
-                <p>Email: {contact.email}</p>
-                <p>Telefone: {contact.fone}</p>
-                <p>Status: Active</p>
-                <p>Cliente: {contact.client.name}</p>
-              </div>
-            </li>
+            contacts.map((contact) => {
+              return <ContactCard contact={contact} key={contact.id} />;
+            })
           )
-        }
+          :
+          ( 
+            <h2>Parece que este cliente não possui contatos...</h2>
           )
         }
       </ul>

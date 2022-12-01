@@ -7,11 +7,17 @@
     width: 80%;
 
     margin: 0 auto;
+    padding: 1rem;
+
+    border-radius: 5px;
+
+    background-color:#fa7f77;
 
 }
 
 .inputLabel{
     width: 90%;
+    color: #FFFFFF;
 }
 
 .input{
@@ -19,6 +25,19 @@
 }
 
 .btn_register_client{
-    width: 60%;
+    width: 80%;
+    height: 18px;
+
     margin: 1rem auto 0 auto;
+
+    background-color: #d46455;
+
+    border: none;
+    border-radius: 5px;
+}
+
+.btn_register_client:hover{
+    opacity: .5;
+    color: white;
+
 }

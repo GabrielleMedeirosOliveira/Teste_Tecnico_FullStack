@@ -7,11 +7,14 @@
     width: 80%;
 
     margin: 0 auto;
-
+    padding: 1rem;
+    border-radius: 5px;
+    background-color:#fa7f77;
 }
 
 .inputLabel{
     width: 90%;
+    color: #FFFFFF;
 }
 
 .input{
@@ -26,8 +29,17 @@
 }
 
 .btn_register_contact{
+    width: 70%;
+    height: 20px;
     margin: 1rem auto 0 auto;
-    width: 60%;
+    background-color: #d46455;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn_register_contact:hover{
+    opacity: .5;
+    color: white;
 }
 
 .btn_go_back{

@@ -1,11 +1,10 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import { ContactDataContext } from "../../context/contactData";
 import style from "./style.module.css";
 import { ClientDataContext } from "../../context/clientData";
-
 export const FormContact = () => {
   const { getContactData } = useContext(ContactDataContext);
   const { getAllClients, clients } = useContext(ClientDataContext);
@@ -15,25 +14,17 @@ export const FormContact = () => {
     fone: yup.string().required("Field Required!"),
     client_id: yup.string().required("Field Required!"),
   });
-
   const { register, handleSubmit } = useForm({
     resolver: yupResolver(formSchema),
   });
-
   const onSubmit = (data) => {
     getContactData(data);
   };
 
-  const handleNavigation = () =>{}
-
   useEffect(() => {
-
     getAllClients()
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
-
   }, []);
-
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className={style.container}>
@@ -45,7 +36,7 @@ export const FormContact = () => {
         <input
           type="text"
           name="fone"
-          placeholder="(67)91234-5678"
+          placeholder="(11)94002-8922"
           {...register("fone")}
           className={style.input}
         />

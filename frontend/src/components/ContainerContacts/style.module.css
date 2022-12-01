@@ -3,4 +3,12 @@
     flex-direction: column;
     gap: 2rem;
     margin: 1rem auto;
+
+    width: 90%;
+    max-height: 800px;
+
+    background-color: azure;
+    border-radius: 5px;
+
+    overflow: auto;
 }

@@ -2,10 +2,34 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     gap: 1rem;
 
     margin: 3rem auto 0 auto;
 
     width: 90%;
+}
+
+.containerTitle{
+    font-size: 20px;
+    color: #f6c7b7;
+}
+
+.btn_go_back{
+
+    width: 10rem;
+    height: 20px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #d46455;
+
+}
+
+.btn_go_back:hover{
+    opacity: .5;
+    color: white;
+
 }
