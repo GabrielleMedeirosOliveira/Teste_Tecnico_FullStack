@@ -10,3 +10,11 @@ export interface IClientUpdate{
     email? : string
     fone? : string
 }
+
+export interface IClient{
+    id?: string
+    name : string
+    email : string
+    fone : string
+    createdAt : string
+}

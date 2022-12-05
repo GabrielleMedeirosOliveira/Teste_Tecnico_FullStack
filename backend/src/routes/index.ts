@@ -1,14 +1,8 @@
-import { Router } from "express";
-import clientCreateController from "../controllers/client/clientCreate.controller";
-import clientDeleteController from "../controllers/client/clientDelete.controller";
-import clientListController from "../controllers/client/clientList.controller";
-import clientUpdateController from "../controllers/client/clientUpdate.controller";
+import { Express } from "express";
+import { clientRoutes } from "./client.routes";
+import { contactRoutes } from "./contacts.routes";
 
-const routes = Router();
-
-routes.post("", clientCreateController)
-routes.get("", clientListController)
-routes.delete("/:id", clientDeleteController)
-routes.patch("/:id", clientUpdateController)
-
-export default routes;
+export const appRoutes = (app: Express) => {
+  app.use("/clients", clientRoutes());
+  app.use("/contacts", contactRoutes());
+};

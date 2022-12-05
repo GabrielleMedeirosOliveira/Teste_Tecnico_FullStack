@@ -1,6 +1,6 @@
 import { AppDataSource } from "../../data-source"
 import { Client } from "../../entities/client.entity"
-import { ErrorHandler } from "../../errors/appError"
+import { AppError } from "../../errors/appError"
 
 const clientDeleteService = async (id: string) =>{
     const clientRepository = AppDataSource.getRepository(Client)
@@ -10,7 +10,7 @@ const clientDeleteService = async (id: string) =>{
     }})
 
     if(!clientToDelete){
-        throw new ErrorHandler(404, "Client not found.")
+        throw new AppError(404, "Client not found.")
     }
 
     await clientRepository.delete(clientToDelete);

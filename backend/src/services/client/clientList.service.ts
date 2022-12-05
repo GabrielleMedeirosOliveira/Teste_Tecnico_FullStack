@@ -4,7 +4,9 @@ import { Client } from "../../entities/client.entity"
 const clientListService = async () =>{
     const clientRepository = AppDataSource.getRepository(Client)
 
-    const clients = await clientRepository.find()
+    const clients = await clientRepository.find({relations: {
+        contacts: true
+    }})
 
     return clients
 }

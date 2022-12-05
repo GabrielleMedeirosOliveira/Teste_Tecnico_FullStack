@@ -1,12 +1,13 @@
-/* import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors/appError";
 
 export const errorMiddleware = (
-  err: any,
+  err: Error,
   req: Request,
   res: Response,
   _: NextFunction
 ) => {
+
   if (err instanceof AppError) {
     return res.status(err.statusCode).json({
       status: "error",
@@ -20,4 +21,4 @@ export const errorMiddleware = (
     code: 500,
     message: err.message,
   });
-}; */
+};
