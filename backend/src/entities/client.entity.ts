@@ -1,5 +1,7 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
 import {v4 as uuid} from 'uuid'
+import { Contact } from "./contact.entity";
+
 
 @Entity()
 export class Client{
@@ -17,6 +19,9 @@ export class Client{
 
     @Column()
     createdAt: Date;
+
+    @OneToMany(()=> Contact, contact => contact.client)
+    contacts: Contact[]
 
     constructor(){
         if(!this.id){
