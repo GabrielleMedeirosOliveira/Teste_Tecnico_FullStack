@@ -5,9 +5,9 @@ import clientDeleteService from "../../services/client/clientDelete.service";
 const clientDeleteController = async(req: Request, res:Response) =>{
     const {id} = req.params
 
-    await clientDeleteService(id)
+    const response = await clientDeleteService(id)
 
-    return res.status(204)
+    return res.json(response)
 }
 
 export default clientDeleteController

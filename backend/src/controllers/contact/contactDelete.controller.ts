@@ -5,9 +5,9 @@ import contactDeleteService from "../../services/contact/contactDelete.service";
 const contactDeleteController = async(req: Request, res:Response) =>{
     const {id} = req.params
 
-    await contactDeleteService(id)
+    const response = await contactDeleteService(id)
 
-    return res.status(204)
+    return res.json(response)
 }
 
 export default contactDeleteController

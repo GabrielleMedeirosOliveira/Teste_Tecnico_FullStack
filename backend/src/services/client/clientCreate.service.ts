@@ -16,11 +16,16 @@ const clientCreateService = async ({name, email, fone}: IClientRequest) =>{
         throw new AppError(400, "Client already exists")
     }
 
+    const informatedData = new Date();
+
+    const date = new Date(informatedData.toString())
+
     const client = clientRepository.create({
         name,
         email,
         fone,
-        createdAt: new Date()
+        isActive: true,
+        createdAt: date.toLocaleDateString()
     })
 
     await clientRepository.save(client)

@@ -17,10 +17,13 @@ export class Client{
     @Column()
     fone: string;
 
-    @Column()
-    createdAt: Date;
+    @Column({default: true})
+    isActive: boolean;
 
-    @OneToMany(()=> Contact, contact => contact.client)
+    @Column()
+    createdAt: string;
+
+    @OneToMany(()=> Contact, contact => contact.client, {cascade: true})
     contacts: Contact[]
 
     constructor(){

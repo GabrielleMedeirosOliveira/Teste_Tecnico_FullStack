@@ -16,6 +16,9 @@ export class Contact{
     @Column()
     fone: string;
 
+    @Column({default: true})
+    isActive: boolean;
+
     @ManyToOne(()=>Client, client => client.contacts, {eager: true})
     @JoinColumn()
     client: Client

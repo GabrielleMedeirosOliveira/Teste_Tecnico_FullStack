@@ -13,9 +13,11 @@ const clientDeleteService = async (id: string) =>{
         throw new AppError(404, "Client not found.")
     }
 
-    await clientRepository.delete(clientToDelete);
+    clientToDelete.isActive = false
 
-    return "Client Deleted!"
+    await clientRepository.save(clientToDelete)
+
+    return "Client desactivated!"
 }
 
 export default clientDeleteService
