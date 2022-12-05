@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+/* import { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors/appError";
 
 export const errorMiddleware = (
@@ -20,4 +20,4 @@ export const errorMiddleware = (
     code: 500,
     message: err.message,
   });
-};
+}; */
