@@ -1,0 +1,51 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: postgres_sql_container
+    image: postgres
+    environment:
+      POSTGRES_USER: gabri
+      POSTGRES_PASSWORD: 1234
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "9000:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  backend:
+    container_name: backend_container
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    networks:
+      - backend
+      - postgres
+    volumes:
+      - ./backend:/home/node/app
+    depends_on:
+      - postgres
+  
+  frontend:
+    container_name: frontend_container
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/home/node/app
+
+networks:
+  postgres:
+    driver: bridge
+  backend:
+    driver: bridge
+
+volumes:
+    postgres:
