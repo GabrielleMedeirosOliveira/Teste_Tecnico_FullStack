@@ -8,7 +8,7 @@ export const ContainerContacts = () => {
   const { contacts } = useContext(ContactDataContext);
   return (
     <>
-      <ul className={style.contactist}>
+      <ul className={style.contactList}>
         {
           contacts.length > 0 ?
           (
@@ -18,7 +18,7 @@ export const ContainerContacts = () => {
           )
           :
           ( 
-            <h2>Parece que este cliente não possui contatos...</h2>
+            <h1>Parece que este cliente não possui contatos...</h1>
           )
         }
       </ul>
